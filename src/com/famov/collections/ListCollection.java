@@ -52,7 +52,7 @@ public class ListCollection {
 
     public static void main(String[] args) {
 
-        linkendListTest();
+        arrayListTest();
     }
 
 }

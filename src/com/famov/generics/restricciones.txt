@@ -1,0 +1,60 @@
+
+Restricciones con genéricos
+
+- No se pueden instanciar genéricos con tipos primitivos
+
+List<int> list = new LinkedList<>(); // Error
+Set<short> set = new HashSet<>();    // Error
+
+List<Integer> list = new LinkedList<>(); // OK
+Set<Short> set = new HashSet<>();        // OK
+
+- No se pueden crear instancias de parámetros de tipo
+
+public static <T> void add(List<T> list) {
+    T n = new T();  // Error
+    list.add(n);
+}
+
+- No se pueden declarar campos estáticos de parámetros de tipo
+
+public class <T> MyClass {
+    private static T globalVar; // Error
+}
+
+- No se puede hacer cast o instanceof con parámetros de tipo
+
+List<Integer> list = new ArrayList<>();
+if (list instanceof List<Integer>) {    // Error
+    List<Number> = (List<Number>) list; // Error
+}
+
+- No se pueden crear arreglos de parámetros de tipo
+
+List<Integer> arr[] = new List<>[10]; // Error
+
+- No se puede crear o hacer catch a parámetros de tipo
+
+public class GenericException<T> extends Exception { /* ... */ } // Error
+
+public static <E extends Exception> myProcess() {
+    try {
+        ...
+    } catch (E e) { // Error
+        ...
+    }
+}
+
+ (pero esto sí se puede hacer:)
+
+public class DataTransfer<E extends Exception> {
+    public void sendData(ByteBuffer data) throws E { // OK
+        ...
+    }
+}
+
+- No se puede sobrecargar un método donde los parámetros de tipo terminan en el mismo tipo crudo
+
+public void createData(MutableObject<Connection> data) { }
+public void createData(MutableObject<BufferedImage> data) { }
+
