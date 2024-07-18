@@ -1,0 +1,7 @@
+1.- Registros
+2.- Caché
+3.- Árboles
+4.- Stcaks(el procesador y cualquier programa funciona y se basa en un Stack) llamada tambien Estructura Lifo - last in - first out
+    4.1.- Notacion postfijo e infijo
+          infijo :       A + B  ->  1 + 2 * 3
+          post fijo:     A B +  ->  1 2 3 * +
