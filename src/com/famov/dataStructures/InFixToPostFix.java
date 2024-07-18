@@ -58,7 +58,7 @@ public class InFixToPostFix {
         StringBuilder res = new StringBuilder();
         Stack<String> stack = new Stack<>(100);
         
-        StringTokenizer st = new StringTokenizer(expr, " ");
+        StringTokens st = new StringTokens(expr);
         while (st.hasMoreTokens()) {
             String s = st.nextToken();
             if ("(".equals(s)) {

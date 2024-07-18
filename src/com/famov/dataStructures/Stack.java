@@ -52,6 +52,26 @@ public class Stack<T> {
         return data.length;
     }
 
+    @Override
+    public String toString() {
+        
+        if (getSize()== 0) {
+            return "<<Empty>>";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int n = 0; n <= sp; n++) {
+            if (sb.length()>0) {
+                sb.append(" ");       
+            }
+            sb.append(data[n]);
+        }
+        
+        
+        return sb.toString();
+    }
+    
+    
+
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>(10);
 
