@@ -3,7 +3,7 @@ package com.famov.annotations;
 
 @IMessage(message = "Hola mundo.")
 public class HelloWorld {
-    
+
     public static void main(String[] args) {
         IMessage msg = HelloWorld.class.getAnnotation(IMessage.class);
         
